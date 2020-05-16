@@ -33,6 +33,47 @@
 
 There is nothing special about the types in Typescript. You're working with the exact same primitive values that you have in Javascript. The only difference is you're explicitly declaring the types you're expecting through your code.
 
+```ts
+// Basics
+const stringVar: string = "this is a string";
+const numberVar: number = 1995;
+const booleanVar: boolean = true;
+
+// Array of anything
+const arrayVar: any[] = [numberVar, stringVar, booleanVar];
+
+// Array of strings
+const stringArr: string[] = [stringVar, "another string"];
+
+// Object with unspecified properties - can contain anything
+const objectVar: {} = {
+  name: "Braedon",
+  age: 25,
+  lovesIceCream: true,
+};
+
+// Object where we specify the structure
+const objectWithTypes: {
+  name: string;
+  age: number;
+  lovesIceCream?: boolean;
+} = {
+  name: "Braedon",
+  age: 25,
+};
+
+// Other types
+let voidFunction: () => void;
+let nullVar: null;
+let undefinedVar: undefined;
+let anyVar: any;
+let neverVar: never;
+```
+
 Typescript is smart enough to infer most types for us:
 
 ![fetching-boolean](images/fetching-boolean.png)
+
+It's even smart enough to know when you're using let or const. We can see when we change the declaration from `let` to `const`, Typescript will infer this to always be `false` instead of boolean since we can no longer re-assign the variable:
+
+![const-fetching-boolean](images/const-fetching-boolean.png)
