@@ -3,11 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  let fetching = false;
-
-  if (fetching) {
-    return <div>Loading...</div>;
-  }
+  // * define function to uppercase first letter
 
   return (
     <div className="App">
