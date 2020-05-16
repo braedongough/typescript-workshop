@@ -70,7 +70,7 @@ let anyVar: any;
 let neverVar: never;
 ```
 
-Typescript is smart enough to infer most types for us:
+### Typescript is smart enough to infer most types for us:
 
 ![fetching-boolean](images/fetching-boolean.png)
 
