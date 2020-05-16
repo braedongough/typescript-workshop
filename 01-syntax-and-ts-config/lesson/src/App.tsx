@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const fetching = false;
+  let fetching = false;
 
   if (fetching) {
     return <div>Loading...</div>;
