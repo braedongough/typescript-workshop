@@ -2,7 +2,7 @@
 
 1. Using `npx` create a new React project using the typescript template
 
-2. In `App.tsx`, define a function that takes **one** argument, `user`.
+2. In `App.tsx`, define a function called `getUserName` that takes **one** argument, `user`.
 
 - `user` is an object with two properties; `firstName` and `lastName`. They are both strings.
 
