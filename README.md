@@ -15,4 +15,4 @@ Process for every lesson:
 
 ## Helpful resources
 
-- [Typescript Handbook](https://www.typescriptlang.org/docs/handbook)
+- [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)

@@ -75,5 +75,3 @@ const user: User = {
 
 // updatedAt and deletedAt are optional
 ```
-
-todo: create `lesson` project and add comment to show adding props without interface and omitting props with interface
