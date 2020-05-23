@@ -43,11 +43,11 @@ Scrolling down a bit further, we'll find an interface for Function Components:
 
 ```ts
 interface FunctionComponent<P = {}> {
-  (props: PropsWithChildren<P>, context?: any): ReactElement<any, any> | null;
-  propTypes?: WeakValidationMap<P>;
-  contextTypes?: ValidationMap<any>;
-  defaultProps?: Partial<P>;
-  displayName?: string;
+    (props: PropsWithChildren<P>, context?: any): ReactElement<any, any> | null
+    propTypes?: WeakValidationMap<P>
+    contextTypes?: ValidationMap<any>
+    defaultProps?: Partial<P>
+    displayName?: string
 }
 ```
 
@@ -55,25 +55,25 @@ Our current way of defining an interface for `Props` works, however, it omits im
 
 ```tsx
 const App: FunctionComponent = function () {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-};
+    return (
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                    Edit <code>src/App.tsx</code> and save to reload.
+                </p>
+                <a
+                    className="App-link"
+                    href="https://reactjs.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Learn React
+                </a>
+            </header>
+        </div>
+    )
+}
 ```
 
 ### Generics
@@ -84,31 +84,42 @@ In our previous example, we use the interface `FunctionComponent` to correctly t
 
 ```ts
 interface FunctionComponent<P = {}> {
-  (props: PropsWithChildren<P>, context?: any): ReactElement<any, any> | null;
+    (props: PropsWithChildren<P>, context?: any): ReactElement<any, any> | null
 }
 ```
 
 This interface allows us to pass an argument so we can correctly define our props while making sure each component can implement the same interface and abide by the same rules.
 
 ```tsx
-import React from "react";
+import React from 'react'
 
 interface Props {
-  firstName: string;
-  age: number;
+    firstName: string
+    age: number
 }
 
 const User: React.FunctionComponent<Props> = ({ firstName, age, children }) => (
-  <div>
-    <div>name: {firstName}</div>
-    <div>age: {age}</div>
-    <div>{children}</div>
-  </div>
-);
+    <div>
+        <div>name: {firstName}</div>
+        <div>age: {age}</div>
+        <div>{children}</div>
+    </div>
+)
 ```
 
-todo: show how to use generics with useState in the exercise
+Typing event handlers can be a bit more tricky. We'll need to compose an interface imported from the React namespace as well as use one from the global type definition file, `global.d.ts`. This is available to us in every file like a global variable is and actually comes from the types we import for React.
 
-```
+```tsx
+import React from 'react'
 
+const User: React.FunctionComponent<Props> = ({ firstName, age, children }) => {
+    const onSubmit = (event: React.FormEvent<HtmlFormElement>) => callSomeAPI()
+    return (
+        <form onSubmit={onSubmit}>
+            <div>name: {firstName}</div>
+            <div>age: {age}</div>
+            <div>{children}</div>
+        </form>
+    )
+}
 ```
