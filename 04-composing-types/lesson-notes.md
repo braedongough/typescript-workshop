@@ -1,4 +1,4 @@
-# Composing Types using Type Aliases, Unions and Intersections
+# Composing Types using Type Aliases, Unions, Intersections and Enums
 
 ## Type Aliases
 
