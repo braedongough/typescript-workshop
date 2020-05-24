@@ -3,9 +3,6 @@ import styled from 'styled-components'
 import logo from './logo.svg'
 import './App.css'
 
-// todo: install react router types
-// todo: install and type https://github.com/sindresorhus/decamelize
-
 function App() {
     return (
         <div className="App">
