@@ -1,28 +1,23 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    // ^ These set the environment - usually never changes
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "esnext",
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        // ^ These set the environment - usually never changes
 
-    "allowJs": true, // Allow JavaScript files to be imported inside your project
-    "skipLibCheck": true, // Skip type checking of declaration files.
-    "allowSyntheticDefaultImports": true, // Allows import React from "react"; instead of import * as React from "react";
-    "strict": true, // ! The strict flag enables type checking behavior that results in stronger guarantees of correctness.
-    // ? https://www.typescriptlang.org/tsconfig#strict
-    "forceConsistentCasingInFileNames": true, //  TypeScript will issue an error if a program tries to include a file by a casing different from the casing on disk.
-    "resolveJsonModule": true, // Allows importing modules with a ‘.json’ extension
-    "isolatedModules": true, // Forces every file to export something
-    "noEmit": true, // Doesn't output JS from the compiler so we can use Babel instead
-    "jsx": "react" // Controls how JSX constructs are emitted in JavaScript files.
-  },
-  "include": ["src"]
-  // ^ Specifies an array of filenames or patterns to include in the program.
-  // These filenames are resolved relative to the directory containing the tsconfig.json file
-  //|-src
-  //    |-components
-  //    |-pages
-  // Allows importing from 'components' or 'pages' directly instead of 'src/components' or 'src/pages'
+        "allowJs": true, // Allow JavaScript files to be imported inside your project
+        "skipLibCheck": true, // Skip type checking of declaration files.
+        "allowSyntheticDefaultImports": true, // Allows import React from "react"; instead of import * as React from "react";
+        "strict": true, // ! The strict flag enables type checking behavior that results in stronger guarantees of correctness.
+        // ? https://www.typescriptlang.org/tsconfig#strict
+        "forceConsistentCasingInFileNames": true, //  TypeScript will issue an error if a program tries to include a file by a casing different from the casing on disk.
+        "resolveJsonModule": true, // Allows importing modules with a ‘.json’ extension
+        "isolatedModules": true, // Forces every file to export something
+        "noEmit": true, // Doesn't output JS from the compiler so we can use Babel instead
+        "jsx": "react" // Controls how JSX constructs are emitted in JavaScript files.
+    },
+    "include": ["src"]
+    // ^ Specifies an array of filenames or patterns to include in the program.
 }
