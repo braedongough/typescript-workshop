@@ -2,6 +2,11 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 
+// todo: implement props without FunctionComponent
+// ? children isn't present
+// todo: apply FunctionComponent interface without props
+// ? children is present
+
 const App = () => {
     return (
         <div className="App">
