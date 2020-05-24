@@ -2,9 +2,6 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-// todo define function to uppercase first letter
-// todo: show type inference between let and const
-
 function App() {
     return (
         <div className="App">

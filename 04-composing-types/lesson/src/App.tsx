@@ -2,14 +2,6 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-// Todo: Show FC alias
-
-// Todo: demonstration intersections
-
-// Todo: Create a union type and demo autocompletion for only shared properties
-
-// Todo: Create string literal union type and show string auto completion
-
 function App() {
     return (
         <div className="App">
