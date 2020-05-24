@@ -4,6 +4,8 @@
 
 Each section will include a lesson, exercise, and solution.
 
+`lesson.md` will contain the plan and notes for each section.
+
 `lesson/` will act as out scratch pad during the lesson.
 
 Within `exercise/` you'll find an `exercise.md` which outlines what you'll need to do.

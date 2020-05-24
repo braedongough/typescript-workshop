@@ -2,7 +2,7 @@
 
 Most libraries will define all of their types in a type definition file for you to access. You can think of this as the built in documentation for the library you're using.
 
-If you're new to Typescript, these files will look like an absolute jungle. `⌘ + click` on React and we'll be directed to `index.d.ts`:
+If you're new to Typescript, these files will look like an absolute jungle. `cmd/ctrl + click` on React and we'll be directed to `index.d.ts`:
 
 ```ts
 declare namespace React {
@@ -107,7 +107,7 @@ const User: React.FunctionComponent<Props> = ({ firstName, age, children }) => (
 )
 ```
 
-Typing event handlers can be a bit more tricky. We'll need to compose an interface imported from the React namespace as well as use one from the global type definition file, `global.d.ts`. This is available to us in every file like a global variable is and actually comes from the types we import for React.
+Typing event handlers can be a bit more tricky. We'll need to compose an interface imported from the React namespace as well as use one from the global type definition file, `global.d.ts`. This is available to us in every file like a global variable and actually comes from the types we import for React.
 
 ```tsx
 import React from 'react'
