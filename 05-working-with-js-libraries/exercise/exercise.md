@@ -6,4 +6,4 @@
 
 3. Remember to update `tsconfig.json` with the correct base url.
 
-4. Use `filled-array` to create an array with a count of three, filled with your name to confirm you're typings work as expect. Render the array as an unordered list in the `About` component.
+4. Use `filled-array` to create an array with a count of three, filled with your name to confirm you're typings work as expected. Render the array as an unordered list in the `About` component.
