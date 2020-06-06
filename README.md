@@ -24,6 +24,8 @@ Process for every lesson:
    - Example code from lesson will be pushed to repo so you can reference it during the exercises
 2. Exercise
    - ~ 20 - 30 minutes per exercise
+   - I recommend reading through all of the questions in an exercise before coding
+   - Go slow and read the errors. Typescript will usually guide you in the right direction.
 3. Solution
 
 ## Helpful resources
