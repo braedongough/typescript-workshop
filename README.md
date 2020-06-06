@@ -32,6 +32,12 @@ Process for every lesson:
 
 - [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 
+- [Interfaces in TypeScript: What are they and how do we use them](https://blog.logrocket.com/interfaces-in-typescript-what-are-they-and-how-do-we-use-them-befbc69b38b3/)
+
+- [How to Use TypeScript Generics](https://itnext.io/how-to-use-typescript-generics-6c0c09e049c3)
+
+- [String Literal Types in TypeScript](https://mariusschulz.com/blog/string-literal-types-in-typescript)
+
 ## Help Make This Workshop Better 🏆
 
 After the workshop, I would love if you could take 5 minutes to answer a few questions so I can learn how to improve this workshop in the future:
