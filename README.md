@@ -17,9 +17,11 @@ Within `exercise/` you'll find an `exercise.md` which outlines what you'll need 
 Process for every lesson:
 
 1. Lesson & Q&A
+   - Example code from lesson will be pushed to repo so you can reference it during the exercises
 2. Exercise
+   - ~ 20 - 30 minutes per exercise
 3. Solution
 
 ## Helpful resources
 
--   [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+- [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)

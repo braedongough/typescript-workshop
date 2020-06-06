@@ -1,13 +1,24 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+interface Todo {}
+
+interface TodoItemProps {}
+
+interface TodoListProps {}
+
+const todos = [
+  {description: 'Clean my room', completed: false},
+  {description: 'Do 500 pushups', completed: true},
+]
 
 function TodoItem(props) {
   return (
     <li>
-      <h3>description: {props.todo.description}</h3>{" "}
-      <input type="checkbox" value={props.todo.completed} />
+      <h3>description: {props.todo.description}</h3>{' '}
+      <input type='checkbox' value={props.todo.completed} />
     </li>
-  );
+  )
 }
 
 function TodoList(props) {
@@ -20,17 +31,12 @@ function TodoList(props) {
         ))}
       </ul>
     </div>
-  );
+  )
 }
-
-const todos = [
-  { description: "Clean my room", completed: false },
-  { description: "Do 500 pushups", completed: true },
-];
 
 ReactDOM.render(
   <React.StrictMode>
     <TodoList todos={todos} />
   </React.StrictMode>,
-  document.getElementById("root")
-);
+  document.getElementById('root')
+)
