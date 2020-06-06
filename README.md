@@ -1,5 +1,9 @@
 # Typescript Workshop
 
+This workshop has been designed to give you the empower you with the foundations of Typescript. I want you to feel comfortable starting your next React project using TS.
+
+Consider it a tool you can reference as you continue to build and expand your knowledge of TS.
+
 ## Workshop structure ⛩
 
 Each section will include a lesson, exercise, and solution.
