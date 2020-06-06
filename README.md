@@ -31,3 +31,9 @@ Process for every lesson:
 ## Helpful resources
 
 - [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+
+### Help Make This Workshop Better
+
+After the workshop, I would love if you could take 5 minutes to answer a few questions so I can learn how to improve this workshop in the future:
+
+[Typescript Workshop Feedback Form](https://forms.gle/kNuP8dwPfW2R5BKF6)

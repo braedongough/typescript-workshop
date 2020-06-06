@@ -1,4 +1,4 @@
-# Exercise: Working with JS Libraries
+# Exercise: Working with JS Libraries - 15min
 
 1. Install the types for `react-router-dom`, so the app starts
 

@@ -1,4 +1,4 @@
-# Exercise: Using Generics and the FunctionComponent Interface
+# Exercise: Using Generics and the FunctionComponent Interface - 30min
 
 `useState` can also take a generic to define what your state is. It can infer most things, however, if you're storing something more complex, you'll need to use a generic.
 

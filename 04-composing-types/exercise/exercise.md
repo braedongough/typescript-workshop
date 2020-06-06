@@ -1,24 +1,26 @@
-# Exercise: Composing Types
+# Exercise: Composing Types - 30min
 
 Often in components you'll see a this pattern or something similar:
 
 ```tsx
-const App: FC<{ loading: boolean; error: boolean }> = ({ loading, error }) => {
-    if (loading) {
-        return <div>Loading..</div>
-    }
+const App: FC<{loading: boolean; error: boolean}> = ({loading, error}) => {
+  if (loading) {
+    return <div>Loading..</div>
+  }
 
-    if (error) {
-        return <div>Error</div>
-    }
+  if (error) {
+    return <div>Error</div>
+  }
 
-    return <div>the real component</div>
+  return <div>the real component</div>
 }
 ```
 
 It works but there is no way we can be sure that `error` and `loading` won't both be true at the same time.
 
 In this exercise we'll use a string literal union type to make that guarantee.
+
+See also: [String Literal Types and Union Types](https://mariusschulz.com/blog/string-literal-types-in-typescript#string-literal-types-and-union-types)
 
 1. Create a component `CatFactsList` and return it from the App component. It should take two props, `catFacts` which is an array of `catFacts` and `status`
 

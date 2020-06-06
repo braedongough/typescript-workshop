@@ -1,4 +1,4 @@
-# Exercise: Create your own create-react-app TS project
+# Exercise: Create your own create-react-app TS project - 15min
 
 1. Using `npx` create a new React project using the typescript template
 

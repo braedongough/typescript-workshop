@@ -1,4 +1,4 @@
-# Exercise: Defining an interface for Props
+# Exercise: Defining an interface for Props - 20min
 
 1. In `index.tsx`, we're rendering a list of Todos. Define an interface for a single `Todo` object. Use that interface to define the interface for our `TodoItem` and `TodoList` components:
 
