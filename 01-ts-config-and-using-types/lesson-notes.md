@@ -4,31 +4,31 @@
 
 ## What is different in `--template typescript`
 
--   `tsconfig.json`
+- `tsconfig.json`
 
-    -   Most of the config you don't need to worry about which is why we rely on tools like create-react-app to handle the boilerplate for us.
+  - Most of the config you don't need to worry about which is why we rely on tools like create-react-app to handle the boilerplate for us.
 
-    -   Config to care about:
-        1. `"strict": true`
-        2. `"include": ["src"]`
+  - Config to care about:
+    1. `"strict": true`
+    2. `"include": ["src"]`
 
--   A few more dependencies in our `package.json`
+- A few more dependencies in our `package.json`
 
-    ```json
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    ```
+  ```json
+  "@testing-library/jest-dom": "^4.2.4",
+  "@testing-library/react": "^9.3.2",
+  "@testing-library/user-event": "^7.1.2",
+  "@types/jest": "^24.0.0",
+  "@types/node": "^12.0.0",
+  "@types/react": "^16.9.0",
+  "@types/react-dom": "^16.9.0",
+  ```
 
--   `.tsx` file extensions
+- `.tsx` file extensions
 
-    -   Files that include JSX must have a .tsx extension.
+  - Files that include JSX must have a .tsx extension.
 
--   Everything else is virtually identical to a JS create-react-app project.
+- Everything else is virtually identical to a JS create-react-app project.
 
 ## Annotating our code with types
 
@@ -36,9 +36,9 @@ There is nothing special about the types in Typescript. You're working with the 
 
 ```ts
 // Basics
-const stringVar: string = 'this is a string'
-const numberVar: number = 1995
-const booleanVar: boolean = true
+const firstName: string = 'Braedon'
+const yearOfBirth: number = 1995
+const loading: boolean = true
 
 // Array of anything
 const arrayVar: any[] = [numberVar, stringVar, booleanVar]
@@ -48,22 +48,22 @@ const stringArr: string[] = [stringVar, 'another string']
 
 // Object with unspecified properties - can contain anything
 const objectVar: {} = {
-    name: 'Braedon',
-    age: 25,
-    lovesIceCream: true,
+  name: 'Braedon',
+  age: 25,
+  lovesIceCream: true,
 }
 
 // Object where we specify the structure
 const objectWithTypes: {
-    name: string
-    age: number
-    lovesIceCream?: boolean
+  name: string
+  age: number
+  lovesIceCream?: boolean
 } = {
-    name: 'Braedon',
-    age: 25,
+  name: 'Braedon',
+  age: 25,
 }
 
-// Other types
+// New types
 let voidFunction: () => void
 let nullVar: null
 let undefinedVar: undefined

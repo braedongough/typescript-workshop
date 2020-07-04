@@ -1,11 +1,16 @@
-# Exercise: Create your own create-react-app TS project - 15min
+# Exercise: Create your first types - 10min
 
-1. Using `npx` create a new React project using the typescript template
+1. In `App.tsx`, define a function called `getUserName` that takes **one** argument, `user`.
 
-2. In `App.tsx`, define a function called `getUserName` that takes **one** argument, `user`.
+2. `user` is an object with two properties; `firstName` and `lastName`. They are both strings:
 
-- `user` is an object with two properties; `firstName` and `lastName`. They are both strings.
+```ts
+const user = {
+  firstName: 'Braedon',
+  lastName: 'Gough',
+}
+```
 
-- This function should return one string which is a concatenation of the two properties of `user`
+3. This function should return one string which is a concatenation of the two properties of `user`
 
-- Use this function and display the string somewhere in the component.
+4. Use this function and display the string somewhere in the component.
