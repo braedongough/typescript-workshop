@@ -34,10 +34,10 @@ Within `exercise/` you'll find an `exercise.md` which outlines what you'll need 
 
 Process for every lesson:
 
-1. Lesson & Q&A
+1. Lesson + Q&A
    - Example code from lesson will be pushed to repo so you can reference it during the exercises
 2. Exercise
-   - ~ 20 - 30 minutes per exercise
+   - ~20 to 30 minutes per exercise
    - I recommend reading through all of the questions in an exercise before coding
    - Go slow and read the errors. Typescript will usually guide you in the right direction.
 3. Solution
