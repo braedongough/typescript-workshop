@@ -12,11 +12,13 @@ Consider this repo a tool you can reference for the future as you continue to bu
 
 1. Make sure `yarn` is install globally on your computer
 
-2. Read through the workshop structure and familiars yourself with the content
+2. Make sure you're running a compatible version of Node: `^8.10.0 || ^10.13.0 || >=11.10.1`. Check out [Node version manager](https://github.com/nvm-sh/nvm)
 
-3. Clone this repo onto your machine
+3. Read through the workshop structure and familiars yourself with the content
 
-4. Run `./install-all` from the root of the project to install the `node_modules` in advance for each lesson: [Link to video guide](https://www.loom.com/share/26a2cdc323c748bc94eddfa1e823876d)
+4. Clone this repo onto your machine
+
+5. Run `./install-all` from the root of the project to install the `node_modules` in advance for each lesson: [Link to video guide](https://www.loom.com/share/26a2cdc323c748bc94eddfa1e823876d)
 
 ## Workshop structure ⛩
 
