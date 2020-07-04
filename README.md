@@ -1,8 +1,22 @@
-# Typescript Workshop
+# Learn Typescript through React - Workshop
 
-This workshop has been designed to give you the empower you with the foundations of Typescript. I want you to feel comfortable starting your next React project using TS.
+This workshop has been designed to empower you with the foundations of Typescript by building on your knowledge of React. I want you to feel comfortable starting your next React project using TS.
 
-Consider it a tool you can reference as you continue to build and expand your knowledge of TS.
+Consider this repo a tool you can reference for the future as you continue to build and expand your knowledge of TS.
+
+## Workshop prerequisites
+
+- A strong understanding of React and hooks
+
+## Preparing for the workshop
+
+1. Make sure `yarn` is install globally on your computer
+
+2. Read through the workshop structure and familiars yourself with the content
+
+3. Clone this repo onto your machine
+
+4. Run `./install-all` from the root of the project to install the `node_modules` in advance for each lesson: [Link to video guide](https://www.loom.com/share/26a2cdc323c748bc94eddfa1e823876d)
 
 ## Workshop structure ⛩
 
