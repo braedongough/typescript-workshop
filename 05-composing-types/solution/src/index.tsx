@@ -1,66 +1,63 @@
-import React, { FC } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { CatFact, getRandomCatFacts } from './get-random-cat-facts'
+const myPets = [
+  {lovesToBark: false, name: 'Spot', favoriteFetchToy: 'tennis ball'},
+  {lovesToBark: true, name: 'Penny', favoriteFetchToy: 'tree branch'},
+  {firstName: 'Teddy', drinksMilk: true, favoriteNappingSpot: 'on the bed'},
+]
 
-type Status = 'idle' | 'loading' | 'resolved' | 'error'
-
-interface Props {
-    catFacts: CatFact[]
-    status: Status
+interface Dog {
+  lovesToBark: boolean
+  name: string
+  favoriteFetchToy: string
 }
 
-const CatFactList: FC<Props> = ({ catFacts, status }) => {
-    switch (status) {
-        case 'idle':
-            return <div>No cat facts to display</div>
-        case 'loading':
-            return <div>loading...</div>
-        case 'error':
-            return <div>error!</div>
-        case 'resolved':
-            return (
-                <ul>
-                    {catFacts.map((fact) => (
-                        <li key={fact._id}>{fact.text}</li>
-                    ))}
-                </ul>
-            )
-        default:
-            return null
-    }
+interface Cat {
+  drinksMilk: boolean
+  firstName: string
+  favoriteNappingSpot: string
 }
 
-const App = () => {
-    const [catFacts, setCatFacts] = React.useState<CatFact[]>([])
-    const [status, setStatus] = React.useState<Status>('idle')
+// type Pet =
 
-    React.useEffect(() => {
-        const getFiveCatFacts = async () => {
-            try {
-                setStatus('loading')
-                const facts = await getRandomCatFacts(5)
-                setCatFacts(facts)
-                setStatus('resolved')
-            } catch {
-                setStatus('error')
-            }
-        }
+interface CatProps {
+  cat: Cat
+}
 
-        getFiveCatFacts()
-    }, [])
+const Cat = ({cat}: CatProps) => (
+  <div style={{border: '1px solid blue'}}>
+    <div>Name: {cat.firstName}</div>
+    <div>Drinks milk: {cat.drinksMilk ? '✅' : '❌'}</div>
+    <div>You can find them sleeping here: {cat.favoriteNappingSpot}</div>
+  </div>
+)
 
-    return (
-        <>
-            <h1>Best Facts about Cats!</h1>
-            <CatFactList catFacts={catFacts} status={status} />
-        </>
-    )
+interface DogProps {
+  dog: Dog
+}
+
+const Dog = ({dog}: DogProps) => (
+  <div style={{border: '1px solid red'}}>
+    <div>Name: {dog.name}</div>
+    <div>Drinks milk: {dog.lovesToBark ? '✅' : '❌'}</div>
+    <div>Wann play fetch? Make sure you bring a {dog.favoriteFetchToy}! </div>
+  </div>
+)
+
+interface PetListProps {
+  pets: // user your Pet type here
+}
+
+const PetList = ({pets}: PetListProps) => {
+  return (
+    <div style={{display: 'grid', gap: 10}}>{/* {map over pets here!} */}</div>
+  )
 }
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    <PetList />
+  </React.StrictMode>,
+  document.getElementById('root')
 )

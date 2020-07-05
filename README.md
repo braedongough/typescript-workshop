@@ -1,4 +1,4 @@
-# Learn Typescript through React - Workshop
+# Learn Typescript Using React - Workshop
 
 This workshop has been designed to empower you with the foundations of Typescript by building on your knowledge of React. I want you to feel comfortable starting your next React project using TS.
 

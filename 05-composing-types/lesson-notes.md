@@ -28,26 +28,26 @@ When you need to combine multiple types together, that's when you'll reach for `
 
 ```ts
 interface User {
-    firstName: string
-    lastName: string
-    age: number
+  firstName: string
+  lastName: string
+  age: number
 }
 
 type Address = {
-    streetName: string
-    houseNumber: number
-    country: string
+  streetName: string
+  houseNumber: number
+  country: string
 }
 
 type UserWithAddress = User & Address
 
 const obj: UserWithAddress = {
-    firstName: 'Doug',
-    lastName: 'Butterson',
-    age: 54,
-    streetName: 'Main st.',
-    houseNumber: 32,
-    country: 'Canada',
+  firstName: 'Doug',
+  lastName: 'Butterson',
+  age: 54,
+  streetName: 'Main st.',
+  houseNumber: 32,
+  country: 'Canada',
 }
 ```
 
@@ -57,23 +57,23 @@ I find unions more difficult to reason about since they are far more nuanced com
 
 ```ts
 interface Company {
-    legalName: string
-    address: string
+  legalName: string
+  address: string
 }
 
 interface Person {
-    name: string
-    address: string
+  name: string
+  address: string
 }
 
 type Entity = Person | Company
 
 const getEntityName = (entity: Entity) => {
-    if ('name' in entity) {
-        return entity.name
-    } else {
-        return entity.legalName
-    }
+  if ('name' in entity) {
+    return entity.name
+  } else {
+    return entity.legalName
+  }
 }
 ```
 
@@ -81,33 +81,18 @@ In the example above we use the `in` keyword to act as a narrowing expression fo
 
 Unions can also use `Literal Types`. Sometimes the primitives can be too broad and we need to narrow the scope of our types even further:
 
-```ts
-interface Company {
-    legalName: string
-    address: string
-    entityType: 'company'
+```tsx
+interface Props {
+  children: ReactNode
+  color: 'red' | 'blue' | 'green'
 }
 
-interface Person {
-    name: string
-    address: string
-    entityType: 'person'
-}
-
-type Entity = Person | Company
-// now the entityType property will be typed as 'person' | 'company'
-
-const getEntityName = (entity: Entity) => {
-    switch (entity.entityType) {
-        case 'company':
-            return entity.legalName
-        case 'person':
-            return entity.name
-    }
-}
+const Button = ({color, children}: Props) => (
+  <button style={{backgroundColor: color}}>{children}</button>
+)
 ```
 
-In the above example, we've set the `entityType` property to be a string literal allowing Typescript to easily infer when we're dealing with a person or a company.
+In the context of React, using unions can give use some really cool autocomplete on our components, making the api of our components clear
 
 ### Enums
 
@@ -115,21 +100,21 @@ Instead of storing static values in a constant, in Typescript, we can reach for 
 
 ```ts
 enum Role {
-    ADMIN = 'Admin',
-    EMPLOYEE = 'Employee',
-    GUEST = 'Guest',
+  ADMIN = 'Admin',
+  EMPLOYEE = 'Employee',
+  GUEST = 'Guest',
 }
 
 interface User {
-    firstName: string
-    lastName: string
-    role: Role
+  firstName: string
+  lastName: string
+  role: Role
 }
 
 const user: User = {
-    firstName: 'Doug',
-    lastName: 'Butterson',
-    role: Role.ADMIN,
+  firstName: 'Doug',
+  lastName: 'Butterson',
+  role: Role.ADMIN,
 }
 ```
 
@@ -137,22 +122,22 @@ Enums are real objects at runtime which can be useful if we want to dynamically 
 
 ```tsx
 enum Role {
-    ADMIN = 'Admin',
-    EMPLOYEE = 'Employee',
-    GUEST = 'Guest',
+  ADMIN = 'Admin',
+  EMPLOYEE = 'Employee',
+  GUEST = 'Guest',
 }
 
 const SelectUserRole: FC = () => {
-    const roles = Object.values(Role)
+  const roles = Object.values(Role)
 
-    return (
-        <select placeholder="Select a role for the user">
-            {roles.map((role) => (
-                <option key={role} value={role}>
-                    {role}
-                </option>
-            ))}
-        </select>
-    )
+  return (
+    <select placeholder='Select a role for the user'>
+      {roles.map((role) => (
+        <option key={role} value={role}>
+          {role}
+        </option>
+      ))}
+    </select>
+  )
 }
 ```
