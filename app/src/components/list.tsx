@@ -4,10 +4,19 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Typography from '@material-ui/core/Typography'
+import { NamedAPIResource } from 'pokedex-promise-v2'
 
-import { PokemonResult } from '../hooks/use-pokemon'
+interface ListItemProps {
+    pokemon: NamedAPIResource
+    pokedexNumber: number
+    onViewStats: () => void
+}
 
-function ListItem({ pokemon, pokedexNumber }: { pokemon: PokemonResult; pokedexNumber: number }) {
+export function ListItem({ pokemon, pokedexNumber, onViewStats }: ListItemProps) {
+    const handleViewStats = () => {
+        onViewStats()
+    }
+
     return (
         <Card style={{ width: 300 }}>
             <CardContent>
@@ -15,22 +24,24 @@ function ListItem({ pokemon, pokedexNumber }: { pokemon: PokemonResult; pokedexN
                     #{pokedexNumber}: {pokemon.name}
                 </Typography>
                 <CardActions>
-                    <Button size="small">View Stats</Button>
+                    <Button size="small" onClick={handleViewStats}>
+                        View Stats
+                    </Button>
                 </CardActions>
             </CardContent>
         </Card>
     )
 }
 
-export function ListPokemon({ listOfPokemon }: { listOfPokemon: PokemonResult[] }) {
-    if (!listOfPokemon.length) {
+export function ListPokemon({
+    loading,
+    children,
+}: {
+    loading: boolean
+    children: React.ReactElement<ListItemProps>[]
+}) {
+    if (loading) {
         return <CircularProgress />
     }
-    return (
-        <>
-            {listOfPokemon.map((pokemon, index) => (
-                <ListItem pokemon={pokemon} pokedexNumber={index + 1}></ListItem>
-            ))}
-        </>
-    )
+    return <>{children}</>
 }

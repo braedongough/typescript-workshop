@@ -1,22 +1,16 @@
+import { NamedAPIResource, NamedAPIResourceList } from 'pokedex-promise-v2'
 import { useEffect, useState } from 'react'
 
 const BASE_URL = 'https://pokeapi.co/api/v2/'
 const RESPONSE_LIMIT = 10
 
-export interface PokemonResult {
+export interface PokemonListResult {
     name: string
     url: string
 }
 
-type ListPokemonResponse = {
-    count: 1118
-    next: string
-    previous: string | null
-    results: PokemonResult[]
-}
-
-export function usePokemon() {
-    const [pokemon, setPokemon] = useState<PokemonResult[]>([])
+export function useListPokemon() {
+    const [listOfPokemon, setListOfPokemon] = useState<NamedAPIResource<string>[]>([])
     const [offset, setOffset] = useState(0)
     const [loading, setLoading] = useState(false)
 
@@ -26,13 +20,13 @@ export function usePokemon() {
                 setLoading(true)
                 return res.json()
             })
-            .then((parsedResponse: ListPokemonResponse) => {
-                setPokemon((currentPokemon) => [...currentPokemon, ...parsedResponse.results])
+            .then((parsedResponse: NamedAPIResourceList<string>) => {
+                setListOfPokemon((currentPokemon) => [...currentPokemon, ...parsedResponse.results])
             })
             .finally(() => setLoading(false))
     }, [offset])
 
     const loadMore = () => setOffset(offset + RESPONSE_LIMIT)
 
-    return { loadMore, pokemon, loading }
+    return { loadMore, listOfPokemon, loading }
 }
