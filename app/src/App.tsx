@@ -1,17 +1,26 @@
+import { useState } from 'react'
 import Button from '@material-ui/core/Button'
-import Modal from '@material-ui/core/Modal'
-import React from 'react'
+import Dialog from '@material-ui/core/Dialog'
 
-import { ListPokemon, ListItem } from './components/list'
+import Spinner from './components/loading-spinner'
+import Stats from './components/stats'
+import PokemonCard from './components/pokemon-card'
 import { useListPokemon } from './hooks/use-list-pokemon'
+import { usePokemon } from './hooks/use-pokemon-stats'
 
 import './App.css'
 
-// todo add styles to modal
-
 function App() {
-    const { listOfPokemon, loadMore, loading } = useListPokemon()
-    const [open, setOpen] = React.useState(false)
+    const [selectedPokemon, setSelectedPokemon] = useState<string | null>(null)
+    const [open, setOpen] = useState(false)
+
+    const { listOfPokemon, loadMore, loading: loadingList } = useListPokemon()
+    const { pokemon, clearStats, loading: loadingStats } = usePokemon(selectedPokemon)
+
+    const clearSelection = () => {
+        clearStats()
+        setSelectedPokemon(null)
+    }
 
     const handleOpen = () => {
         setOpen(true)
@@ -19,33 +28,36 @@ function App() {
 
     const handleClose = () => {
         setOpen(false)
+        clearSelection()
     }
 
-    const onViewStats = () => {
+    const onViewStats = (pokemonName: string) => {
         handleOpen()
-        // todo handle setting of state to fetch individual pokemon
+        setSelectedPokemon(pokemonName)
     }
 
     return (
         <>
             <div className="center">
-                <ListPokemon loading={!listOfPokemon}>
+                <Spinner loading={!listOfPokemon}>
                     {listOfPokemon.map((pokemon, index) => (
-                        <ListItem
+                        <PokemonCard
                             key={index}
                             pokemon={pokemon}
                             pokedexNumber={index + 1}
                             onViewStats={onViewStats}
                         />
                     ))}
-                </ListPokemon>
-                <Button variant="contained" onClick={loadMore} disabled={loading}>
-                    {loading ? 'loading...' : 'load more'}
+                </Spinner>
+                <Button variant="contained" onClick={loadMore} disabled={loadingList}>
+                    {loadingList ? 'loading...' : 'load more'}
                 </Button>
             </div>
-            <Modal open={open} onClose={handleClose}>
-                <div>this is v spicy</div>
-            </Modal>
+            <Dialog open={open} onClose={handleClose}>
+                <Spinner loading={loadingStats}>
+                    {pokemon ? <Stats pokemon={pokemon} /> : null}
+                </Spinner>
+            </Dialog>
         </>
     )
 }

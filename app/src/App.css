@@ -7,3 +7,9 @@
     margin-top: 25px;
     padding: 15px;
 }
+
+.dialog-title {
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
