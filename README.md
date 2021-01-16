@@ -46,6 +46,8 @@ Process for every lesson:
 
 ## Helpful resources
 
+-   [Adding Typescript to an existing CRA project](https://create-react-app.dev/docs/adding-typescript)
+
 -   [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 
 -   [Interfaces in TypeScript: What are they and how do we use them](https://blog.logrocket.com/interfaces-in-typescript-what-are-they-and-how-do-we-use-them-befbc69b38b3/)
