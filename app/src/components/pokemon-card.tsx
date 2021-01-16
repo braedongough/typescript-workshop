@@ -5,6 +5,8 @@ import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import { NamedAPIResource } from 'pokedex-promise-v2'
 
+import { getPokemonName } from '../utils'
+
 interface ListItemProps {
     pokemon: NamedAPIResource
     pokedexNumber: number
@@ -12,15 +14,16 @@ interface ListItemProps {
 }
 
 function PokemonCard({ pokemon, pokedexNumber, onViewStats }: ListItemProps) {
+    const pokemonName = getPokemonName(pokemon)
     const handleViewStats = () => {
-        onViewStats(pokemon.name)
+        onViewStats(pokemonName)
     }
 
     return (
-        <Card style={{ width: 300 }}>
+        <Card style={{ width: 400 }}>
             <CardContent>
                 <Typography gutterBottom>
-                    #{pokedexNumber}: {pokemon.name}
+                    #{pokedexNumber}: {pokemonName}
                 </Typography>
                 <CardActions>
                     <Button size="small" onClick={handleViewStats}>
