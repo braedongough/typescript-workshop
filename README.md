@@ -22,24 +22,17 @@ Consider this repo a tool you can reference for the future as you continue to bu
 
 ## Workshop structure ⛩
 
-Each section will include a lesson, exercise, and solution.
+Each section of the workshop is numbered and named after the subject, e.g. 01-ts-config-and-using-types. Each section will include a lesson and exercise. We will work through the exercise together to find the solution.
 
-`lesson.md` will contain the plan and notes for each section.
-
-`lesson/` will act as out scratch pad during the lesson.
-
-Within `exercise/` you'll find an `exercise.md` which outlines what you'll need to do.
-
-`solution/` contains my solution to the questions in `exercise.md`
+`app/` contains a create-react-app that we will be converting from JS to TS through the course of this workshop. This will be done during each exercise throughout each section.
 
 ## How it works
 
 Process for every lesson:
 
 1. Lesson + Q&A
-    - Example code from lesson will be pushed to repo so you can reference it during the exercises
 2. Exercise
-    - ~20 to 30 minutes per exercise
+    - ~10 to 30 minutes per exercise
     - I recommend reading through all of the questions in an exercise before coding
     - Go slow and read the errors. Typescript will usually guide you in the right direction.
 3. Solution
