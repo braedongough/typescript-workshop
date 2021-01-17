@@ -1,4 +1,4 @@
-# Composing Types using Type Aliases, Unions, Intersections and Enums
+# Composing Types Using Interfaces, Type Aliases, Unions, Intersections and Enums
 
 ## Type Aliases
 
@@ -28,26 +28,26 @@ When you need to combine multiple types together, that's when you'll reach for `
 
 ```ts
 interface User {
-  firstName: string
-  lastName: string
-  age: number
+    firstName: string
+    lastName: string
+    age: number
 }
 
 type Address = {
-  streetName: string
-  houseNumber: number
-  country: string
+    streetName: string
+    houseNumber: number
+    country: string
 }
 
 type UserWithAddress = User & Address
 
 const obj: UserWithAddress = {
-  firstName: 'Doug',
-  lastName: 'Butterson',
-  age: 54,
-  streetName: 'Main st.',
-  houseNumber: 32,
-  country: 'Canada',
+    firstName: 'Doug',
+    lastName: 'Butterson',
+    age: 54,
+    streetName: 'Main st.',
+    houseNumber: 32,
+    country: 'Canada',
 }
 ```
 
@@ -57,23 +57,23 @@ I find unions more difficult to reason about since they are far more nuanced com
 
 ```ts
 interface Company {
-  legalName: string
-  address: string
+    legalName: string
+    address: string
 }
 
 interface Person {
-  name: string
-  address: string
+    name: string
+    address: string
 }
 
 type Entity = Person | Company
 
 const getEntityName = (entity: Entity) => {
-  if ('name' in entity) {
-    return entity.name
-  } else {
-    return entity.legalName
-  }
+    if ('name' in entity) {
+        return entity.name
+    } else {
+        return entity.legalName
+    }
 }
 ```
 
@@ -83,12 +83,12 @@ Unions can also use `Literal Types`. Sometimes the primitives can be too broad a
 
 ```tsx
 interface Props {
-  children: ReactNode
-  color: 'red' | 'blue' | 'green'
+    children: ReactNode
+    color: 'red' | 'blue' | 'green'
 }
 
-const Button = ({color, children}: Props) => (
-  <button style={{backgroundColor: color}}>{children}</button>
+const Button = ({ color, children }: Props) => (
+    <button style={{ backgroundColor: color }}>{children}</button>
 )
 ```
 
@@ -100,21 +100,21 @@ Instead of storing static values in a constant, in Typescript, we can reach for 
 
 ```ts
 enum Role {
-  ADMIN = 'Admin',
-  EMPLOYEE = 'Employee',
-  GUEST = 'Guest',
+    ADMIN = 'Admin',
+    EMPLOYEE = 'Employee',
+    GUEST = 'Guest',
 }
 
 interface User {
-  firstName: string
-  lastName: string
-  role: Role
+    firstName: string
+    lastName: string
+    role: Role
 }
 
 const user: User = {
-  firstName: 'Doug',
-  lastName: 'Butterson',
-  role: Role.ADMIN,
+    firstName: 'Doug',
+    lastName: 'Butterson',
+    role: Role.ADMIN,
 }
 ```
 
@@ -122,22 +122,22 @@ Enums are real objects at runtime which can be useful if we want to dynamically 
 
 ```tsx
 enum Role {
-  ADMIN = 'Admin',
-  EMPLOYEE = 'Employee',
-  GUEST = 'Guest',
+    ADMIN = 'Admin',
+    EMPLOYEE = 'Employee',
+    GUEST = 'Guest',
 }
 
 const SelectUserRole: FC = () => {
-  const roles = Object.values(Role)
+    const roles = Object.values(Role)
 
-  return (
-    <select placeholder='Select a role for the user'>
-      {roles.map((role) => (
-        <option key={role} value={role}>
-          {role}
-        </option>
-      ))}
-    </select>
-  )
+    return (
+        <select placeholder="Select a role for the user">
+            {roles.map((role) => (
+                <option key={role} value={role}>
+                    {role}
+                </option>
+            ))}
+        </select>
+    )
 }
 ```

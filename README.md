@@ -18,7 +18,7 @@ Consider this repo a tool you can reference for the future as you continue to bu
 
 4. Clone this repo onto your machine
 
-5. Run `./install-all` from the root of the project to install the `node_modules` in advance for each lesson: [Link to video guide](https://www.loom.com/share/26a2cdc323c748bc94eddfa1e823876d)
+5. `cd app` and run `yarn` to install node_modules
 
 ## Workshop structure ⛩
 
@@ -63,11 +63,6 @@ After the workshop, I would love if you could take 5 minutes to answer a few que
 
 ## Lesson ideas
 
-### 02
-
--   start by building interfaces for response from list pokemon api
--   When we convert file to TS consider using ts-ignore for ignoring the need for a generic, although that might not work. If that doesn't use that as a case for explaining any.
-
 ### 03
 
 -   Introduce mudkipme/pokeapi-v2-typescript lib
@@ -76,9 +71,5 @@ After the workshop, I would love if you could take 5 minutes to answer a few que
 
 ## 04
 
--   talk about generic that useEffect takes
+-   talk about generic that useState takes
 -   Replace interfaces created into 02 with new library ones since they take generic
-
-## 05
-
--   Enforce type on our children so that it can only use the ListItem component

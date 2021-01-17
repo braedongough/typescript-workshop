@@ -3,18 +3,14 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
-import { NamedAPIResource } from 'pokedex-promise-v2'
 
-import { getPokemonName } from '../utils'
-
-interface ListItemProps {
-    pokemon: NamedAPIResource
+interface Props {
+    pokemonName: string
     pokedexNumber: number
     onViewStats: (pokemonName: string) => void
 }
 
-function PokemonCard({ pokemon, pokedexNumber, onViewStats }: ListItemProps) {
-    const pokemonName = getPokemonName(pokemon)
+function PokemonCard({ pokemonName, pokedexNumber, onViewStats }: Props) {
     const handleViewStats = () => {
         onViewStats(pokemonName)
     }

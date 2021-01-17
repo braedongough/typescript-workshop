@@ -1,22 +1,26 @@
 # Using Interfaces to share types
 
+> One of TypeScript’s core principles is that type checking focuses on the shape that values have.
+>
+> -- <cite><a href="https://www.typescriptlang.org/docs/handbook/interfaces.html">Typescript Handbook</a></cite>
+
 ### What is an interface?
 
-You'll often want to share the types you create across multiple functions and components. It would be impractical to type everything by hand. Interfaces enable us to name these types and create a shared contract across our app.
+You'll often want to share the common types across multiple functions and components. Interfaces enable us to name these types and create a shared contract across our app.
+
+In React, you'll most commonly be using interfaces to define the shape of props passed to your components.
 
 ```tsx
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-interface User {
+interface Props {
     firstName: string
     lastName: number
     age: number
 }
 
-const getUserName = (user: User) => `${user.firstName} ${user.lastName}`
-
-function UserProfile(props: User) {
+function UserProfile(props: Props) {
     return (
         <>
             <div>name: {getUserName(props)}</div>
@@ -31,7 +35,7 @@ ReactDOM.render(
 )
 ```
 
-In the above example, by implementing our `User` interface, we've guaranteed that our UserProfile component will always receive the props firstName, lastName, and age. Since `getUserName` has implement the same interface, we can pass out props directly to the function without any complaints from Typescript.
+In the above example, by implementing our `Props` interface, we've guaranteed that our UserProfile component will always receive the props firstName, lastName, and age.
 
 ### Composing interfaces
 
@@ -45,7 +49,10 @@ interface User {
 }
 
 interface Props {
-    getUserName: (user: User) => string
+    // * method syntax
+    getUserName(user: User): string
+    // * arrow function syntax
+    getUserAge: () => number
     user: User[]
     fetching: boolean
 }

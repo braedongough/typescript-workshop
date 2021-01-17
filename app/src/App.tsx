@@ -7,6 +7,7 @@ import Stats from './components/stats'
 import PokemonCard from './components/pokemon-card'
 import { useListPokemon } from './hooks/use-list-pokemon'
 import { usePokemon } from './hooks/use-pokemon-stats'
+import { getPokemonName } from './utils'
 
 import './App.css'
 
@@ -40,10 +41,10 @@ function App() {
         <>
             <div className="center">
                 <Spinner loading={!listOfPokemon}>
-                    {listOfPokemon.map((pokemon, index) => (
+                    {listOfPokemon.map((it, index) => (
                         <PokemonCard
                             key={index}
-                            pokemon={pokemon}
+                            pokemonName={getPokemonName(it)}
                             pokedexNumber={index + 1}
                             onViewStats={onViewStats}
                         />

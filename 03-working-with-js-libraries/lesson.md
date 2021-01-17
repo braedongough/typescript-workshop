@@ -14,6 +14,8 @@ Could not find a declaration file for module 'react-router-dom'.
 Try `npm install @types/react-router-dom` if it exists or add a new declaration (.d.ts) file containing `declare module 'react-router-dom';`
 ```
 
+You won't have to import these types separately - TS can automatically detect that the type definitions for the library have now been installed.
+
 ### Creating your own type definition file
 
 For a smaller library, it's likely you there won't be any community supported types available. In this case, if you want types for the package, you'll have to create them yourself.
@@ -24,11 +26,8 @@ Create a type definition file in your `src` directory, `[package-name].d.ts` and
 // Package repo: https://github.com/shinnn/count-days-in-month
 
 declare module 'count-days-in-month' {
-  export default function countDaysInMonth(
-    fullYear: number,
-    zeroBasedMonth: number
-  ): number
+    export default function countDaysInMonth(fullYear: number, zeroBasedMonth: number): number
 }
 ```
 
-The above is the equivalent of saying that this function has one default export, a function, which accepts two parameters that are numbers and returns a number.
+The above is the equivalent of saying that this module has one default export, a function, which accepts two parameters that are numbers and returns a number.
