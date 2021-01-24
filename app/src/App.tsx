@@ -1,6 +1,9 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
+import Alert from '@material-ui/lab/Alert'
+import IconButton from '@material-ui/core/IconButton'
+import CloseIcon from '@material-ui/icons/Close'
 
 import Spinner from './components/loading-spinner'
 import Stats from './components/stats'
@@ -10,18 +13,14 @@ import { usePokemon } from './hooks/use-pokemon-stats'
 import { getPokemonName } from './utils'
 
 import './App.css'
+import SearchForm from './components/search-form'
 
 function App() {
     const [selectedPokemon, setSelectedPokemon] = useState<string | null>(null)
     const [open, setOpen] = useState(false)
 
     const { listOfPokemon, loadMore, loading: loadingList } = useListPokemon()
-    const { pokemon, clearStats, loading: loadingStats } = usePokemon(selectedPokemon)
-
-    const clearSelection = () => {
-        clearStats()
-        setSelectedPokemon(null)
-    }
+    const { pokemon, loading: loadingStats, error } = usePokemon(selectedPokemon)
 
     const handleOpen = () => {
         setOpen(true)
@@ -29,7 +28,6 @@ function App() {
 
     const handleClose = () => {
         setOpen(false)
-        clearSelection()
     }
 
     const onViewStats = (pokemonName: string) => {
@@ -40,6 +38,7 @@ function App() {
     return (
         <>
             <div className="center">
+                <SearchForm onSubmit={onViewStats} />
                 <Spinner loading={!listOfPokemon}>
                     {listOfPokemon.map((it, index) => (
                         <PokemonCard
@@ -54,9 +53,28 @@ function App() {
                     {loadingList ? 'loading...' : 'load more'}
                 </Button>
             </div>
+
             <Dialog open={open} onClose={handleClose}>
                 <Spinner loading={loadingStats}>
-                    {pokemon ? <Stats pokemon={pokemon} /> : null}
+                    {!!pokemon && !error ? <Stats pokemon={pokemon} /> : null}
+
+                    {error && (
+                        <Alert
+                            severity="error"
+                            action={
+                                <IconButton
+                                    aria-label="close"
+                                    color="inherit"
+                                    size="small"
+                                    onClick={handleClose}
+                                >
+                                    <CloseIcon fontSize="inherit" />
+                                </IconButton>
+                            }
+                        >
+                            Pokemon not found!
+                        </Alert>
+                    )}
                 </Spinner>
             </Dialog>
         </>

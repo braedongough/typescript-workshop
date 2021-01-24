@@ -49,6 +49,11 @@ Process for every lesson:
 
 -   [String Literal Types in TypeScript](https://mariusschulz.com/blog/string-literal-types-in-typescript)
 
+## Troubleshooting Workshop Setup
+
+-   `Cannot use JSX unless '--jsx' flag is provided. ts(17004)`
+    -   This error likely indicates that the version of Typescript running in vscode is older than the version we're using in the workshop. Try updating vscode or reinstalling the app to resolve this issue.
+
 ## Help Make This Workshop Better 🏆
 
 After the workshop, I would love if you could take 5 minutes to answer a few questions so I can learn how to improve this workshop in the future:

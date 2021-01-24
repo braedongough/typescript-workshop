@@ -1,13 +1,7 @@
 import { CircularProgress } from '@material-ui/core'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-export function Spinner({
-    loading,
-    children,
-}: {
-    loading: boolean
-    children: React.ReactElement[] | React.ReactElement | null
-}) {
+export function Spinner({ loading, children }: { loading: boolean; children: ReactNode }) {
     if (loading) {
         return <CircularProgress />
     }
