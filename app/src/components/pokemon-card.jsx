@@ -4,13 +4,7 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 
-interface Props {
-    pokemonName: string
-    pokedexNumber: number
-    onViewStats: (pokemonName: string) => void
-}
-
-function PokemonCard({ pokemonName, pokedexNumber, onViewStats }: Props) {
+function PokemonCard({ pokemonName, pokedexNumber, onViewStats }) {
     const handleViewStats = () => {
         onViewStats(pokemonName)
     }

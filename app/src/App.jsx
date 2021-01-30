@@ -16,7 +16,7 @@ import './App.css'
 import SearchForm from './components/search-form'
 
 function App() {
-    const [selectedPokemon, setSelectedPokemon] = useState<string | null>(null)
+    const [selectedPokemon, setSelectedPokemon] = useState(null)
     const [open, setOpen] = useState(false)
 
     const { listOfPokemon, loadMore, loading: loadingList } = useListPokemon()
@@ -30,7 +30,7 @@ function App() {
         setOpen(false)
     }
 
-    const onViewStats = (pokemonName: string) => {
+    const onViewStats = (pokemonName) => {
         handleOpen()
         setSelectedPokemon(pokemonName)
     }
