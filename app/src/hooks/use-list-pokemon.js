@@ -1,14 +1,13 @@
-import { NamedAPIResource, NamedAPIResourceList } from 'pokedex-promise-v2'
 import { useEffect, useState } from 'react'
 import { useFetch } from './use-fetch'
 
 const RESPONSE_LIMIT = 10
 
 export function useListPokemon() {
-    const [listOfPokemon, setListOfPokemon] = useState<NamedAPIResource<string>[]>([])
+    const [listOfPokemon, setListOfPokemon] = useState([])
     const [offset, setOffset] = useState(0)
 
-    const { data, loading } = useFetch<NamedAPIResourceList<string>>(
+    const { data, loading } = useFetch(
         `https://pokeapi.co/api/v2/pokemon?limit=${RESPONSE_LIMIT}&offset=${offset}`
     )
 
