@@ -26,6 +26,8 @@ Each section of the workshop is numbered and named after the subject, e.g. 01-ts
 
 `app/` contains a create-react-app that we will be converting from JS to TS through the course of this workshop. This will be done during each exercise throughout each section.
 
+You can find a deployed version of the app here: https://trusting-galileo-a83410.netlify.app/
+
 ## How it works
 
 Process for every lesson:
@@ -59,9 +61,3 @@ Process for every lesson:
 After the workshop, I would love if you could take 5 minutes to answer a few questions so I can learn how to improve this workshop in the future:
 
 [Typescript Workshop Feedback Form](https://forms.gle/kNuP8dwPfW2R5BKF6)
-
-## TODOs for refactor
-
--   add branch protections
--   create protected branch for TS version of app. Main branch will have the JS version
--   Create new feedback form for every workshop
