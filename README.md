@@ -1,4 +1,4 @@
-# Learn Typescript Using React - Workshop
+# Learn Typescript Using React - Workshop ⚛️
 
 This workshop has been designed to empower you with the foundations of Typescript by building on your knowledge of React. I want you to feel comfortable starting your next React project using TS.
 
@@ -6,7 +6,7 @@ Consider this repo a tool you can reference for the future as you continue to bu
 
 ## Workshop prerequisites
 
-- A strong understanding of React and hooks
+-   A strong understanding of React and hooks
 
 ## Preparing for the workshop
 
@@ -18,44 +18,50 @@ Consider this repo a tool you can reference for the future as you continue to bu
 
 4. Clone this repo onto your machine
 
-5. Run `./install-all` from the root of the project to install the `node_modules` in advance for each lesson: [Link to video guide](https://www.loom.com/share/26a2cdc323c748bc94eddfa1e823876d)
+5. `cd app` and run `yarn` to install node_modules
 
 ## Workshop structure ⛩
 
-Each section will include a lesson, exercise, and solution.
+Each section of the workshop is numbered and named after the subject, e.g. 01-ts-config-and-using-types. Each section will include a lesson and exercise. We will work through the exercise together to find the solution.
 
-`lesson.md` will contain the plan and notes for each section.
-
-`lesson/` will act as out scratch pad during the lesson.
-
-Within `exercise/` you'll find an `exercise.md` which outlines what you'll need to do.
-
-`solution/` contains my solution to the questions in `exercise.md`
+`app/` contains a create-react-app that we will be converting from JS to TS through the course of this workshop. This will be done during each exercise throughout each section.
 
 ## How it works
 
 Process for every lesson:
 
 1. Lesson + Q&A
-   - Example code from lesson will be pushed to repo so you can reference it during the exercises
 2. Exercise
-   - ~20 to 30 minutes per exercise
-   - I recommend reading through all of the questions in an exercise before coding
-   - Go slow and read the errors. Typescript will usually guide you in the right direction.
+    - ~10 to 30 minutes per exercise
+    - I recommend reading through all of the questions in an exercise before coding
+    - Go slow and read the errors. Typescript will usually guide you in the right direction.
 3. Solution
 
 ## Helpful resources
 
-- [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+-   [Adding Typescript to an existing CRA project](https://create-react-app.dev/docs/adding-typescript)
 
-- [Interfaces in TypeScript: What are they and how do we use them](https://blog.logrocket.com/interfaces-in-typescript-what-are-they-and-how-do-we-use-them-befbc69b38b3/)
+-   [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 
-- [How to Use TypeScript Generics](https://itnext.io/how-to-use-typescript-generics-6c0c09e049c3)
+-   [Interfaces in TypeScript: What are they and how do we use them](https://blog.logrocket.com/interfaces-in-typescript-what-are-they-and-how-do-we-use-them-befbc69b38b3/)
 
-- [String Literal Types in TypeScript](https://mariusschulz.com/blog/string-literal-types-in-typescript)
+-   [How to Use TypeScript Generics](https://itnext.io/how-to-use-typescript-generics-6c0c09e049c3)
+
+-   [String Literal Types in TypeScript](https://mariusschulz.com/blog/string-literal-types-in-typescript)
+
+## Troubleshooting Workshop Setup
+
+-   `Cannot use JSX unless '--jsx' flag is provided. ts(17004)`
+    -   This error likely indicates that the version of Typescript running in vscode is older than the version we're using in the workshop. Try updating vscode or reinstalling the app to resolve this issue.
 
 ## Help Make This Workshop Better 🏆
 
 After the workshop, I would love if you could take 5 minutes to answer a few questions so I can learn how to improve this workshop in the future:
 
 [Typescript Workshop Feedback Form](https://forms.gle/kNuP8dwPfW2R5BKF6)
+
+## TODOs for refactor
+
+-   add branch protections
+-   create protected branch for TS version of app. Main branch will have the JS version
+-   Create new feedback form for every workshop
