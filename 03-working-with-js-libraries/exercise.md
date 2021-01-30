@@ -17,3 +17,9 @@ import /*<imported interface here>*/ from 'pokedex-promise-v2'
 ```
 
 4. Replace the type you created in the last exercise for the `pokemon` prop with this newly imported interface.
+
+5. Return to the `pokeapi-v2-typescript` repo and find the interface for a pokemon stat.
+
+6. Import the pokemon stat interface and the pokemon interface into the `utils.ts` folder.
+
+7. Replace the types we created in exercise 1 with these newly imported interfaces.
