@@ -1,5 +1,7 @@
 # Learn Typescript Using React - Workshop ⚛️
 
+[🔗 Watch the course on YouTube](https://www.youtube.com/watch?v=r6NWTfz_M3s&list=PLvDYjZroj6JK695pQ4b5158sZnDDLEyZ_)
+
 This workshop has been designed to empower you with the foundations of Typescript by building on your knowledge of React. I want you to feel comfortable starting your next React project using TS.
 
 Consider this repo a tool you can reference for the future as you continue to build and expand your knowledge of TS.
